@@ -16,8 +16,7 @@ export const validationMiddleware = <T>(
   schema: Schema<T>,
   validationOptions: ValidationOptions = {},
 ): RequestHandler<unknown, unknown, unknown> => (req, _res, next) => {
-    const { body, params } = req;
-    const { error } = schema.validate({ body, params }, { ...defaultValidationOptions, ...validationOptions });
+    const { error } = schema.validate(req.body, { ...defaultValidationOptions, ...validationOptions });
 
     const messages = getValidationExceptionMessage(error?.details);
 

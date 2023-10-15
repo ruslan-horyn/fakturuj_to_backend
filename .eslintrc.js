@@ -3,6 +3,7 @@
 */
 
 module.exports = {
+  root: true,
   env: {
     browser: true,
     node: true,
@@ -17,7 +18,6 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    // 'prettier', 
     'plugin:sonarjs/recommended'
   ],
   ignorePatterns: [
